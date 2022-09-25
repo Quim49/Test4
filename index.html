@@ -4,7 +4,7 @@
     
 </head>
 <body>
-    <div id="text"> Test 3 </div>
+    <div id="text"> Test 4 </div>
     <div id="orderTotal">  </div>
     
     <button type="submit" class="style" onclick="getOrder()">Get Order</button>
@@ -29,6 +29,12 @@
     <button type="submit" class="style" onclick="closeModal()">Close</button>
     
     <script>
+        function getInfo(){
+            getAccount(function() {
+                getOrder(function(){
+                })
+            })
+        }
         function getOrder(){
             RevoLoyalty.getOrder(function(json) {
                 var order = JSON.parse(json)
